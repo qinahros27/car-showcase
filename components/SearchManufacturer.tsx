@@ -56,7 +56,7 @@ const SearchManufacturer = ({
             leaveTo="opacity-0"
             afterLeave={() => setQuery("")}
           >
-            <ComboboxOptions>
+            <ComboboxOptions className='max-h-60 overflow-y-auto'>
               {filteredManufacturers.map((item) => (
                 <ComboboxOption
                   key={item}
