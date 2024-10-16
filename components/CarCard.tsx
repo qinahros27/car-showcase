@@ -5,8 +5,9 @@ import Image from 'next/image'
 
 import { CarProps } from '@/types'
 import CustomButton from './CustomButton'
-import { calculationCarRent } from '@/utils'
+import { calculationCarRent, generateCarImage } from '@/utils'
 import CarDetails from './CarDetails';
+
 
 interface CarCardProps {
     car: CarProps;
