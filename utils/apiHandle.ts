@@ -1,11 +1,17 @@
 import { FilterProps } from '@/types';
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export async function fetchCars(filters : FilterProps) {
   const {manufacturer, year, fuel, limit, model} = filters;
-
+  if (!process.env.API_KEY) {
+    throw new Error('Missing API_KEY in environment variables');
+  }
+  
   const headers = {
-    'x-rapidapi-key': 'c278b5d052msh70e7ce5703d3e09p1c91d9jsnca74b968f474',
+    'x-rapidapi-key': process.env.API_KEY,
     'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
   }
 
